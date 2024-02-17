@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+
+/*// colors*/
+:root {
+  --color-dark:  #161616;
+  --color-ocean:  #416dea;
+  --color-grass: #3dd28d;
+  --color-snow: #FFFFFF;
+  --color-salmon: #F32C52;
+  --color-sun: #feee7d;
+  --color-alge: #7999a9;
+  --color-flower: #353866;
+  --color-smoke: #e4e4e4;
+  
+  --borderRadius: 36px;
+
+  --font-face: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/*// reset*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.titleCase, .hidden {
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.titleCase {
+	font-size: 32px;
+/*	width: 400px;*/
+  animation: showup 7s;
+}
+
+.hidden {
+	font-size: 20px;
+  width:0px;
+  animation: reveal 7s;
+}
+
+.hidden span {
+  margin-left:-255px;
+  animation: slidein 7s;
+  width: 50px;
+  display: inline;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-255px; }
+    20% { margin-left:-255px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:255px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:255px;}
+}
+
+.coolTitle {
+	text-align: center;
+	font-family: 'Oswald', Helvetica, sans-serif;
+	font-size: 40px;
+	transform: skewY(-10deg);
+	letter-spacing: 4px;
+	word-spacing: -8px;
+	color: tomato;
+	text-shadow:
+		-1px -1px 0 firebrick,
+		-2px -2px 0 firebrick,
+		-3px -3px 0 firebrick,
+		-4px -4px 0 firebrick,
+		-5px -5px 0 firebrick,
+		-6px -6px 0 firebrick,
+		-7px -7px 0 firebrick,
+		-8px -8px 0 firebrick,
+		-30px 20px 40px dimgrey;
+}
+
+.hit-the-floor {
+  color: #fff;
+  font-size: 10vw;
+  font-weight: bold;
+  font-family: Helvetica;
+  text-shadow: 
+    0 .005em 0 #ccc, 
+    0 .01em 0 #c9c9c9, 
+    0 .015em 0 #bbb, 
+    0 .02em 0 #b9b9b9, 
+    0 .025em 0 #aaa, 
+    0 .03em .005em rgba(0,0,0,.1), 
+    0 0 .025em rgba(0,0,0,.1), 
+    0 .005em .015em rgba(0,0,0,.3), 
+    0 .015em .025em rgba(0,0,0,.2), 
+    0 .025em .05em rgba(0,0,0,.25), 
+    0 .05em .05em rgba(0,0,0,.2), 
+    0 .1em .1em rgba(0,0,0,.15);
+}
+
+.done {
+	text-decoration: line-through;
+	list-style: disc;
+}
+
+.titleCase, .hidden {
+/*  text-align:center;*/
+/*  background:#ccc;*/
+  color:#555;
+  font-family:'Montserrat';
+  font-weight:300;
+/*  font-size:32px;*/
+/*  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0,0,0);*/
+}
+
+body {
+  background-color: #f1f1f1;
+  min-height: 100vh;
+  font-family:'Montserrat';
+  font-weight:300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#enter {
+	flex-direction: row;
+}
+
+#userinput {
+	margin-inline: 1rem;
+}
+
+.listItem {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	/*display: -webkit-inline-box;
+	display: inline-box;
+*/}
+
+/*.bold{
+	display: flex;
+	justify-content: space-between;
+}*/
+
+
+li {
+/*	display: inline-block;*/
+	list-style: circle;
+	cursor: pointer;
+}
+
+.grid_container {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+}
+
+ul button {
+	margin-inline: 1rem;
+}
+
+/*// button styles*/
+.button {
+/*  display: flex;*/
+  overflow: hidden;
+
+/*  margin: 10px;*/
+  padding: 12px 12px;
+
+  cursor: pointer;
+  user-select: none;
+  transition: all 150ms linear;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none !important;
+  text-transform: none;
+  text-transform: capitalize;
+
+  color: #fff;
+  border: 0 none;
+  border-radius: var(--borderRadius);
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  appearance:         none;
+ 
+/*  justify-content: center;
+  align-items: center;
+  flex: 0 0 160px;*/
+  
+  box-shadow: 2px 5px 10px var(--color-smoke);
+
+  &:hover {
+    transition: all 150ms linear;
+
+    opacity: .85;
+  }
+  
+  &:active {
+    transition: all 150ms linear;
+    opacity: .75;
+  }
+  
+  &:focus {
+    outline: 1px dotted #959595;
+    outline-offset: -4px;
+  }
+}
+
+.blue {
+  color: var(--color-snow);
+  background: var(--color-ocean);
+}
+
+.dark {
+  color: var(--color-snow);
+  background: var(--color-dark);
+  margin-inline: 12px;
+  margin-block: 0;
+  padding: 5px 5px;
+  
+   &:focus {
+    outline: 1px dotted white;
+    outline-offset: -4px;
+  }
+}
